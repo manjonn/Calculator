@@ -124,6 +124,7 @@
     self.displayLabel.text=[number stringValue];
     
     self.expressionLabel.text=@"0";
-    
+    _startFresh=YES;
+
 }
 @end
