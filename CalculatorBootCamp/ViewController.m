@@ -40,7 +40,7 @@
         _startFresh=NO;
         return;
     }
-    if (sender.tag==110) {
+    if ([sender.currentTitle isEqualToString:@"."]) {
         NSRange range=[self.displayLabel.text rangeOfString:@"."];
         if (range.location==NSNotFound) {
             self.displayLabel.text=[NSString stringWithFormat:@"%@%@",self.displayLabel.text,[sender currentTitle]];
@@ -63,6 +63,7 @@
 - (IBAction)earse:(UIButton *)sender {
     
     self.displayLabel.text=@"0";
+    
 }
 
 
@@ -120,6 +121,7 @@
     NSExpression *expression=[NSExpression expressionWithFormat:expressionString];
     
     NSNumber *number=[expression expressionValueWithObject:nil context:nil];
+    
     
     self.displayLabel.text=[number stringValue];
     
